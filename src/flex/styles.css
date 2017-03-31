@@ -1,0 +1,16 @@
+.displayFlex {
+  position: relative;
+  display: flex;
+  height: 100%;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.flex {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  overflow: auto;
+}

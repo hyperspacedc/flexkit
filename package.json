@@ -1,7 +1,7 @@
 {
-  "name": "react-flex-ui",
-  "version": "1.0.0",
-  "description": "Flexbox based UI patterns in React",
+  "name": "flexkit",
+  "version": "1.2.0",
+  "description": "Dead-simple flexbox helper components for React",
   "main": "./lib/index.js",
   "scripts": {
     "clean": "rimraf lib",
@@ -19,7 +19,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexfreska/react-flex-ui.git"
+    "url": "git+https://github.com/opvs/flexkit.git"
   },
   "keywords": [
     "flexbox",
@@ -33,9 +33,9 @@
   "author": "Alex alex.freska@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alexfreska/react-flex-ui/issues"
+    "url": "https://github.com/opvs/flexkit/issues"
   },
-  "homepage": "https://github.com/alexfreska/react-flex-ui#readme",
+  "homepage": "https://github.com/opvs/flexkit#readme",
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-cli": "^6.14.0",
@@ -53,5 +53,10 @@
     "istanbul": "^1.0.0-alpha",
     "mocha": "^3.0.2",
     "rimraf": "^2.5.4"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   }
 }
