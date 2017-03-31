@@ -53,5 +53,10 @@
     "istanbul": "^1.0.0-alpha",
     "mocha": "^3.0.2",
     "rimraf": "^2.5.4"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   }
 }

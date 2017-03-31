@@ -1,0 +1,54 @@
+.table {
+  height: 100%;
+  background: rgba(0,0,0,0.02);
+  border: 1px solid rgba(57,70,78,0.08);
+}
+
+.tableHeader {
+  background: white;
+  color: rgba(0,0,0,0.5);
+  font-weight: 600;
+  box-shadow: 0 0 1px rgba(57,70,78,0.2);
+}
+
+.tableHeaderContents {
+  padding: 10px;
+}
+
+.displayFlex {
+  display: flex;
+}
+
+.tableRow {
+  margin: 5px;
+}
+
+.displayFlexColumn {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.flex {
+  flex: 1;
+}
+
+.tableCell {
+  padding: 5px;
+}
+
+.flexColumnScroll {
+  overflow-y: scroll;
+}
+
+.green {
+  background: rgb(240,240,240);
+  height: 150px;
+}
+
+.tableFooter {
+  padding: 10px;
+  box-shadow: 0 0 1px rgba(57,70,78,0.2);
+  color: rgba(0,0,0,0.7);
+  background: white;
+}
