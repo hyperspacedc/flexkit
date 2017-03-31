@@ -1,7 +1,6 @@
-# React Flex UI [![Build Status](https://travis-ci.org/alexfreska/react-flex-ui.svg?branch=master)](https://travis-ci.org/alexfreska/react-flex-ui)
+## Flexkit [![Build Status](https://travis-ci.org/opvs/flexkit.svg?branch=master)](https://travis-ci.org/opvs/flexkit)
 
-Flexbox based helpers
+Dead-simple flexbox helper components for React
 
-# Installation
-`npm install --save react-flex-ui`
-
+### Installation
+`yarn add flexkit`
