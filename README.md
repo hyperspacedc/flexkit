@@ -1,6 +1,9 @@
 <img src='https://github.com/opvs/flexkit/blob/master/fk_logo.png?raw=true' height='100'>
 
-## Flexkit [![Build Status](https://travis-ci.org/opvs/flexkit.svg?branch=master)](https://travis-ci.org/opvs/flexkit)
+## Flexkit
+[![Build Status](https://travis-ci.org/opvs/flexkit.svg?branch=master)](https://travis-ci.org/opvs/flexkit)
+<span class="badge-npmversion"><a href="https://npmjs.org/package/flexkit" title="View this project on NPM"><img src="https://img.shields.io/npm/v/flexkit.svg" alt="NPM version" /></a></span>
+<span class="badge-npmdownloads"><a href="https://npmjs.org/package/flexkit" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/flexkit.svg" alt="NPM downloads" /></a></span>
 
 Dead-simple flexbox helper components for React.
 
