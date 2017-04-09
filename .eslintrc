@@ -28,8 +28,6 @@
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
     "react/prefer-stateless-function": "off",
     "react/jsx-wrap-multilines": 0,
-    "jsx-a11y/no-static-element-interactions": "off",
-    "jsx-a11y/label-has-for": "off",
     "no-unused-vars": ["error", { "ignoreRestSiblings": true }]
   },
   "plugins": [
