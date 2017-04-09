@@ -1,4 +1,4 @@
-<img src='https://github.com/opvs/flexkit/blob/master/assets/fk_logo.png?raw=true' height='100'>
+<img src='https://github.com/opvs/flexkit/blob/master/assets/logo.png?raw=true' height='100'>
 
 ## Flexkit
 [![Build Status](https://travis-ci.org/opvs/flexkit.svg?branch=master)](https://travis-ci.org/opvs/flexkit)
@@ -7,7 +7,7 @@
 
 Dead-simple layout helpers for React applications.
 
->> _This project is still experimental!_
+> _This project is still experimental!_
 
 #### Installation
 ```sh
@@ -39,5 +39,5 @@ const TwitterFeed = () =>
 #### Table
 The `Table` component makes advanced column behaviour and layouts that break typical table semantics very simple. Columns can have min/max/fixed/flex widths, and can be dropped at breakpoints. These options are configured with props and require no configuration with user written row and cell components. The `Table` component takes its containers height and has a header and footer that stay fixed to the top and bottom of the container when the contents scrolls.
 
->> _Work in progress_
+> _Work in progress_
 
