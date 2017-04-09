@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const DisplayFlex = styled.div`
+export const View = styled.div`
   position: relative;
   display: flex;
   height: 100%;

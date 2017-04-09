@@ -1,8 +1,6 @@
-import { Flex, DisplayFlex } from './flex'
-import FlexTable from './table'
+import { View, Flex } from './flex'
 
 export default {
   Flex,
-  DisplayFlex,
-  FlexTable
+  View
 }
