@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { View, Flex } from '../../src/flex'
+import { View, Flex } from '../../src'
 
 const Sidebar = styled.div`
   width: 50px;

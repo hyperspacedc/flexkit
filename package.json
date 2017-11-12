@@ -1,6 +1,6 @@
 {
   "name": "flexkit",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Dead-simple layout helpers for React applications",
   "main": "./lib/index.js",
   "scripts": {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
-import { View, Flex } from '../src/flex'
+import { View, Flex } from '../src'
 import FirstExample from './examples/first'
 import SecondExample from './examples/second'
 
@@ -142,7 +142,7 @@ class App extends Component {
             </Section>
             <Header>Other</Header>
             <Footer>
-              Made by <Link 
+              Made by <Link
                 href="#">Hobbits</Link>.
             </Footer>
           </Contents>
