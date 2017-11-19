@@ -4,10 +4,20 @@ import { Table, TableHeader, TableHeaderContents, TableRow, TableCell, TableFoot
 
 const { element, string, arrayOf, oneOf, shape, number, object } = PropTypes
 
-const FlexTable = ({ HeaderContents, Footer, EmptyState, columns, rows }) =>
+const FlexTable = ({
+  HeaderContents,
+  Footer,
+  EmptyState,
+  headerClassName,
+  rowClassName,
+  cellClassName,
+  footerClassName,
+  columns,
+  rows
+}) =>
   <Table>
     <View column>
-      <TableHeader>
+      <TableHeader className={headerClassName}>
         <View column>
           {HeaderContents &&
             <TableHeaderContents>
@@ -15,7 +25,7 @@ const FlexTable = ({ HeaderContents, Footer, EmptyState, columns, rows }) =>
             </TableHeaderContents>
           }
           <div>
-            <TableRow>
+            <TableRow className={rowClassName}>
               <View>
                 {columns.map(({ label, flex }) =>
                   <Flex flex={flex}>
@@ -29,11 +39,11 @@ const FlexTable = ({ HeaderContents, Footer, EmptyState, columns, rows }) =>
       </TableHeader>
       <Flex scroll>
         {rows && rows.length ? rows.map(({ rowProps = {}, rowCells, rowElement }) =>
-          <TableRow {...rowProps}>
+          <TableRow {...rowProps} className={rowClassName}>
             <View>
               {rowCells && rowCells.map((el, i) =>
                 <Flex flex={columns[i].flex}>
-                  <TableCell>{el}</TableCell>
+                  <TableCell className={cellClassName}>{el}</TableCell>
                 </Flex>
               )}
             </View>
@@ -43,7 +53,7 @@ const FlexTable = ({ HeaderContents, Footer, EmptyState, columns, rows }) =>
           </TableRow>
         ) : EmptyState}
       </Flex>
-      <TableFooter>
+      <TableFooter className={footerClassName}>
         {Footer}
       </TableFooter>
     </View>
@@ -53,6 +63,10 @@ FlexTable.propTypes = {
   HeaderContents: element,
   Footer: element,
   EmptyState: element,
+  headerClassName: string,
+  rowClassName: string,
+  cellClassName: string,
+  footerClassName: string,
   columns: arrayOf(shape({
     label: string,
     flex: oneOf([number, string])
