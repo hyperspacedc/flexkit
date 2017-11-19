@@ -2,26 +2,24 @@ import React, { PropTypes } from 'react'
 import { View, Flex } from '../flex'
 import { Table, Header, HeaderContents, Row, Cell, Footer } from './styles'
 
-const { element, string, arrayOf, oneOf, shape, number, object } = PropTypes
+const { component, element, string, arrayOf, oneOf, shape, number, object } = PropTypes
 
 const FlexTable = ({
-  Header = Header,
-  HeaderContents,
-  Footer,
-  EmptyState,
+  HeaderComponent = Header,
+  headerContentsElement,
+  footerElement,
+  emptyStateElement,
   className = null,
-  headerClassName = null,
   rowClassName = null,
   cellClassName = null,
-  footerClassName = null,
   columns,
   rows
 }) =>
   <Table className={className}>
     <View column>
-      <Header className={headerClassName}>
+      <HeaderComponent>
         <View column>
-          {HeaderContents && <HeaderContents />}
+          {headerContentsElement}
           <div>
             <Row className={rowClassName}>
               <View>
@@ -34,12 +32,12 @@ const FlexTable = ({
             </Row>
           </div>
         </View>
-      </Header>
+      </HeaderComponent>
       <Flex scroll>
-        {rows && rows.length ? rows.map(({ rowProps = {}, rowCells, rowElement }) =>
+        {rows && rows.length ? rows.map(({ rowProps = {}, rowCellElements, rowElement }) =>
           <Row {...rowProps} className={rowClassName}>
             <View>
-              {rowCells && rowCells.map((el, i) =>
+              {rowCellElements && rowCellElements.map((el, i) =>
                 <Flex flex={columns[i].flex}>
                   <Cell className={cellClassName}>{el}</Cell>
                 </Flex>
@@ -49,28 +47,26 @@ const FlexTable = ({
               {rowElement}
             </View>
           </Row>
-        ) : EmptyState}
+        ) : emptyStateElement}
       </Flex>
-      {Footer && <Footer className={footerClassName} />}
+      {footerElement}
     </View>
   </Table>
 
 FlexTable.propTypes = {
-  Header: element,
-  HeaderContents: element,
-  Footer: element,
-  EmptyState: element,
+  HeaderComponent: component,
+  headerContentsElement: element,
+  footerElement: element,
+  emptyStateElement: element,
   className: string,
-  headerClassName: string,
   rowClassName: string,
   cellClassName: string,
-  footerClassName: string,
   columns: arrayOf(shape({
     label: string,
     flex: oneOf([number, string])
   })),
   rows: arrayOf(shape({
-    rowCells: arrayOf(element),
+    rowCellElements: arrayOf(element),
     rowElement: element,
     rowProps: object
   }))
