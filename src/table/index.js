@@ -60,6 +60,7 @@ FlexTable.propTypes = {
   HeaderContents: element,
   Footer: element,
   EmptyState: element,
+  className: string,
   headerClassName: string,
   rowClassName: string,
   cellClassName: string,
