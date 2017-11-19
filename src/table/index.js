@@ -57,12 +57,11 @@ FlexTable.propTypes = {
     label: string,
     flex: oneOf([number, string])
   })),
-  rowProps: object,
-  rows: shape({
+  rows: arrayOf(shape({
     rowCells: arrayOf(element),
     rowElement: element,
     rowProps: object
-  })
+  }))
 }
 
 export default FlexTable
