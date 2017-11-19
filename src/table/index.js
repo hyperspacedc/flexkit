@@ -1,65 +1,62 @@
 import React, { PropTypes } from 'react'
 import { View, Flex } from '../flex'
-import { Table, TableHeader, TableHeaderContents, TableRow, TableCell, TableFooter } from './styles'
+import { Table, Header, HeaderContents, Row, Cell, Footer } from './styles'
 
 const { element, string, arrayOf, oneOf, shape, number, object } = PropTypes
 
 const FlexTable = ({
+  Header = Header,
   HeaderContents,
   Footer,
   EmptyState,
-  headerClassName,
-  rowClassName,
-  cellClassName,
-  footerClassName,
+  className = null,
+  headerClassName = null,
+  rowClassName = null,
+  cellClassName = null,
+  footerClassName = null,
   columns,
   rows
 }) =>
   <Table className={className}>
     <View column>
-      <TableHeader className={headerClassName}>
+      <Header className={headerClassName}>
         <View column>
-          {HeaderContents &&
-            <TableHeaderContents>
-              {HeaderContents}
-            </TableHeaderContents>
-          }
+          {HeaderContents && <HeaderContents />}
           <div>
-            <TableRow className={rowClassName}>
+            <Row className={rowClassName}>
               <View>
                 {columns.map(({ label, flex }) =>
                   <Flex flex={flex}>
-                    <TableCell>{label}</TableCell>
+                    <Cell>{label}</Cell>
                   </Flex>
                 )}
               </View>
-            </TableRow>
+            </Row>
           </div>
         </View>
-      </TableHeader>
+      </Header>
       <Flex scroll>
         {rows && rows.length ? rows.map(({ rowProps = {}, rowCells, rowElement }) =>
-          <TableRow {...rowProps} className={rowClassName}>
+          <Row {...rowProps} className={rowClassName}>
             <View>
               {rowCells && rowCells.map((el, i) =>
                 <Flex flex={columns[i].flex}>
-                  <TableCell className={cellClassName}>{el}</TableCell>
+                  <Cell className={cellClassName}>{el}</Cell>
                 </Flex>
               )}
             </View>
             <View>
               {rowElement}
             </View>
-          </TableRow>
+          </Row>
         ) : EmptyState}
       </Flex>
-      <TableFooter className={footerClassName}>
-        {Footer}
-      </TableFooter>
+      {Footer && <Footer className={footerClassName} />}
     </View>
   </Table>
 
 FlexTable.propTypes = {
+  Header: element,
   HeaderContents: element,
   Footer: element,
   EmptyState: element,
@@ -78,4 +75,13 @@ FlexTable.propTypes = {
   }))
 }
 
+
+export {
+  Table,
+  Header,
+  HeaderContents,
+  Row,
+  Cell,
+  Footer
+}
 export default FlexTable
