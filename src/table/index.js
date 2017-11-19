@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { View, Flex } from '../flex'
-import { Table, Header, HeaderContents, Row, Cell, Footer } from './styles'
+import { Table, Header, Row, Cell } from './styles'
 
 const { component, element, string, arrayOf, oneOf, shape, number, object } = PropTypes
 
@@ -72,13 +72,4 @@ FlexTable.propTypes = {
   }))
 }
 
-
-export {
-  Table,
-  Header,
-  HeaderContents,
-  Row,
-  Cell,
-  Footer
-}
 export default FlexTable

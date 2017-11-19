@@ -31,3 +31,12 @@ export const Footer = styled.div`
   color: rgba(0,0,0,0.7);
   background: white;
 `
+
+export default {
+  Table,
+  Header,
+  HeaderContents,
+  Row,
+  Cell,
+  Footer
+}
