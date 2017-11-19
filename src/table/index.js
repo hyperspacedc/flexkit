@@ -15,7 +15,7 @@ const FlexTable = ({
   columns,
   rows
 }) =>
-  <Table>
+  <Table className={className}>
     <View column>
       <TableHeader className={headerClassName}>
         <View column>
