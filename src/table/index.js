@@ -6,6 +6,8 @@ const { component, element, string, arrayOf, oneOf, shape, number, object } = Pr
 
 const FlexTable = ({
   HeaderComponent = Header,
+  RowComponent = Row,
+  HeaderRowComponent = Row,
   headerContentsElement,
   footerElement,
   emptyStateElement,
@@ -21,7 +23,7 @@ const FlexTable = ({
         <View column>
           {headerContentsElement}
           <div>
-            <Row className={rowClassName}>
+            <HeaderRowComponent>
               <View>
                 {columns.map(({ label, flex }) =>
                   <Flex flex={flex}>
@@ -29,13 +31,13 @@ const FlexTable = ({
                   </Flex>
                 )}
               </View>
-            </Row>
+            </HeaderRowComponent>
           </div>
         </View>
       </HeaderComponent>
       <Flex scroll>
         {rows && rows.length ? rows.map(({ rowProps = {}, rowCellElements, rowElement }) =>
-          <Row {...rowProps} className={rowClassName}>
+          <RowComponent {...rowProps}>
             <View>
               {rowCellElements && rowCellElements.map((el, i) =>
                 <Flex flex={columns[i].flex}>
@@ -46,7 +48,7 @@ const FlexTable = ({
             <View>
               {rowElement}
             </View>
-          </Row>
+          </RowComponent>
         ) : emptyStateElement}
       </Flex>
       {footerElement}
@@ -55,6 +57,8 @@ const FlexTable = ({
 
 FlexTable.propTypes = {
   HeaderComponent: component,
+  HeaderRowComponent: component,
+  RowComponent: component,
   headerContentsElement: element,
   footerElement: element,
   emptyStateElement: element,
