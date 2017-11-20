@@ -8,12 +8,11 @@ const FlexTable = ({
   HeaderComponent = Header,
   RowComponent = Row,
   HeaderRowComponent = Row,
+  CellComponent = Cell,
   headerContentsElement,
   footerElement,
   emptyStateElement,
   className = null,
-  rowClassName = null,
-  cellClassName = null,
   columns,
   rows
 }) =>
@@ -27,7 +26,7 @@ const FlexTable = ({
               <View>
                 {columns.map(({ label, flex }) =>
                   <Flex flex={flex}>
-                    <Cell>{label}</Cell>
+                    <CellComponent>{label}</CellComponent>
                   </Flex>
                 )}
               </View>
@@ -41,7 +40,7 @@ const FlexTable = ({
             <View>
               {rowCellElements && rowCellElements.map((el, i) =>
                 <Flex flex={columns[i].flex}>
-                  <Cell className={cellClassName}>{el}</Cell>
+                  <CellComponent>{el}</CellComponent>
                 </Flex>
               )}
             </View>
@@ -59,12 +58,11 @@ FlexTable.propTypes = {
   HeaderComponent: component,
   HeaderRowComponent: component,
   RowComponent: component,
+  CellComponent: component,
   headerContentsElement: element,
   footerElement: element,
   emptyStateElement: element,
   className: string,
-  rowClassName: string,
-  cellClassName: string,
   columns: arrayOf(shape({
     label: string,
     flex: oneOf([number, string])
