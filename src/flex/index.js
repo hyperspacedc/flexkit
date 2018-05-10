@@ -4,7 +4,7 @@ export const View = styled.div`
   position: relative;
   display: flex;
   height: 100%;
-  flex-direction: ${({ column }) => (column ? 'column' : 'inherit')};
+  flex-direction: ${({ column }) => (column ? 'column' : 'row')};
 `
 export const Flex = styled.div`
   position: relative;
