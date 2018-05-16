@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { View, Flex } from '../flex'
-import { Table, Header, Row, Cell } from './styles'
+import { Table, Header, Row, Cell, NonIdealArea } from './styles'
 
 const { component, element, string, arrayOf, oneOf, shape, number, object } = PropTypes
 
@@ -11,10 +11,10 @@ const FlexTable = ({
   CellComponent = Cell,
   headerContentsElement,
   footerElement,
-  emptyStateElement,
+  nonIdealStateElement,
   className = null,
   columns,
-  rows
+  rows = []
 }) =>
   <Table className={className}>
     <View column>
@@ -35,7 +35,7 @@ const FlexTable = ({
         </View>
       </HeaderComponent>
       <Flex scroll>
-        {rows && rows.length ? rows.map(({ rowProps = {}, rowCellElements, rowElement }) =>
+        {!!rows && rows.map(({ rowProps = {}, rowCellElements, rowElement }) =>
           <RowComponent {...rowProps}>
             <View>
               {rowCellElements && rowCellElements.map((el, i) =>
@@ -48,9 +48,14 @@ const FlexTable = ({
               {rowElement}
             </View>
           </RowComponent>
-        ) : emptyStateElement}
+        )}
       </Flex>
       {footerElement}
+      {!!nonIdealStateElement &&
+        <NonIdealArea>
+          {nonIdealStateElement}
+        </NonIdealArea>
+      }
     </View>
   </Table>
 
@@ -61,7 +66,7 @@ FlexTable.propTypes = {
   CellComponent: component,
   headerContentsElement: element,
   footerElement: element,
-  emptyStateElement: element,
+  nonIdealStateElement: element,
   className: string,
   columns: arrayOf(shape({
     label: string,

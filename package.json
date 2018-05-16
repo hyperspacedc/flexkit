@@ -1,6 +1,6 @@
 {
   "name": "flexkit",
-  "version": "1.11.5",
+  "version": "1.11.6",
   "description": "Dead-simple layout helpers for React applications",
   "main": "./lib/index.js",
   "scripts": {
@@ -52,7 +52,7 @@
     "babel-register": "^6.24.0",
     "chai": "^3.5.0",
     "cross-env": "^3.0.0",
-    "eslint": "^3.6.0",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.0.0",
     "eslint-plugin-jsx-a11y": "2.2.3",
